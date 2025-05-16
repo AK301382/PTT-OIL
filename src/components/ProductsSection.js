@@ -1,4 +1,4 @@
-"use client"; 
+"use client";
 import React, { useState } from 'react';
 
 const ProductsSection = () => {
@@ -75,40 +75,53 @@ const ProductsSection = () => {
     return (
         <section id="products" className="py-20">
             <div className="container mx-auto px-6 text-center">
-                <h2 className="text-3xl font-bold mb-12 text-gray-800">محصولات روغن موتور PTT</h2>
+                <h2 className="text-3xl font-bold mb-12 text-gray-800">محصولات مبلایل PTT</h2>
 
-                {/* Tab-style category selector */}
-                <div className="mb-12 flex justify-center" dir="rtl">
-                    <div className="bg-blue-300 rounded-full p-1 flex space-x-1 rtl:space-x-reverse">
-                        {tabs.map((tab) => (
-                            <button
-                                key={tab.id}
-                                className={`px-6 py-2 font-semibold rounded-full transition-colors duration-300 ease-in-out focus:outline-none 
-                            ${activeTab === tab.id
-                                        ? 'bg-white text-gray-800 shadow-md'
-                                        : 'bg-transparent text-black-600 hover:bg-black-600 hover:text-white'}`}
-                                onClick={() => setActiveTab(tab.id)}
-                            >
-                                {tab.label}
-                            </button>
-                        ))}
-                    </div>
-                </div>
+                {/* Tabs */}
+                 <div className="mb-10 flex justify-center px-2" dir="rtl">
+                 <div className="bg-blue-300 rounded-full p-1 flex flex-wrap justify-center gap-3 sm:gap-4 max-w-full">
+                  {tabs.map((tab) => (
+                 <button
+                  key={tab.id}
+                 className={`text-xs sm:text-sm md:text-base px-1 sm:px-7 md:px-10 py-1 sm:py-2 md:py-2 font-medium rounded-full transition-all duration-300 ease-in-out focus:outline-none 
+                  ${activeTab === tab.id
+                    ? 'bg-white text-gray-800 shadow'
+                    : 'bg-transparent text-black hover:bg-black hover:text-white'}`}
+                   onClick={() => setActiveTab(tab.id)}
+                 >  
+                    {tab.label}
+                          </button>
+                           ))}
+                          </div>
+                            </div>
 
+                {/* Product Cards */}
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8" dir="rtl">
                     {displayProducts.map((product, index) => (
-                        <div key={index} className="bg-blue-300 p-6 rounded-lg shadow-lg text-right flex flex-col">
+                        <div
+                            key={index}
+                            className="bg-blue-300 rounded-2xl shadow-lg text-right overflow-hidden flex flex-col hover:shadow-xl transition-shadow duration-300"
+                        >
                             {product.image && (
-                                <div className="w-full h-96 mb-4 rounded-md overflow-hidden">
-                                    <img src={product.image} alt={product.name} className="w-full h-full object-cover" />
-                                </div>
+                                <img
+                                    src={product.image}
+                                    alt={product.name}
+                                    className="w-full aspect-[4/3/5] object-cover"
+                                />
                             )}
-                            <h4 className="text-xl font-bold mb-2 text-bluck">{product.name}</h4>
-                            <p className="text-gray-600 mb-4 flex-grow">{product.description}</p>
-                            <div className="flex flex-wrap justify-end mb-4">
-                                {product.specs.map((spec, i) => (
-                                    <span key={i} className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm font-semibold ml-2 mb-2">{spec}</span>
-                                ))}
+                            <div className="p-4 flex flex-col flex-grow">
+                                <h4 className="text-xl font-bold mb-2 text-bluck">{product.name}</h4>
+                                <p className="text-gray-700 mb-4">{product.description}</p>
+                                <div className="flex flex-wrap justify-end mt-auto">
+                                    {product.specs.map((spec, i) => (
+                                        <span
+                                            key={i}
+                                            className="bg-gray-200 text-gray-700 px-2 py-1 rounded-full text-sm font-semibold ml-2 mb-2"
+                                        >
+                                            {spec}
+                                        </span>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     ))}
@@ -116,7 +129,6 @@ const ProductsSection = () => {
             </div>
         </section>
     );
-}
+};
 
 export default ProductsSection;
-

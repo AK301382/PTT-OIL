@@ -19,20 +19,16 @@ const SelectionGuideSection = () => {
         { vehicleType: 'موترهای سنگین', conditions: 'متنوع', recommendation: 'PTT Turbo Power 15W-40', features: 'مقاومت حرارتی بالا، محافظت از موتور تحت بار' },
         { vehicleType: 'موتورسیکلت‌های ', conditions: 'متنوع', recommendation: 'PTT Moto Sport 10W-50', features: 'سنتتیک، مناسب دورهای بالا، محافظت از گیربکس' },
         { vehicleType: 'سه چرخه ها ', conditions: 'متنوع', recommendation: 'PTT D3-HV 1/5Litres 20W-60', features: 'سنتتیک، محافظت عالی، عملکرد بالا،صرفه‌جویی در مصرف سوخت' },
-
     ];
 
     return (
         <section id="selection-guide" className="py-20">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-                {/* Main container with light green background and rounded corners */}
                 <div className="bg-blue-300 text-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
                     <h2 className="text-3xl font-bold mb-12 text-center">راهنمای انتخاب مبلایل مناسب</h2>
 
-                    {/* How to choose oil section */}
                     <div className="mb-16">
                         <h3 className="text-2xl font-semibold mb-8 text-gray-700 text-center">چگونه مبلایل مناسب را انتخاب کنیم؟</h3>
-                        {/* <p className="text-gray-600 mb-8 text-center">انتخاب مبلایل مناسب برای وسیله ای شما به عوامل مختلفی بستگی دارد. با استفاده از راهنمای زیر می‌توانید بهترین انتخاب را داشته باشید:</p> */}
                         <div className="space-y-8">
                             {selectionSteps.map((step, index) => (
                                 <div key={index} className="p-6 bg-white rounded-xl shadow-lg flex items-start">
@@ -46,26 +42,26 @@ const SelectionGuideSection = () => {
                         </div>
                     </div>
 
-                    {/* Quick selection table section */}
+                    {/* جدول سریع انتخاب مبلایل */}
                     <div>
                         <h3 className="text-2xl font-semibold mb-8 text-center text-gray-700">جدول راهنمای سریع انتخاب مبلایل </h3>
                         <div className="overflow-x-auto bg-white p-4 sm:p-6 rounded-xl shadow-lg">
-                            <table className="min-w-full">
+                            <table className="min-w-full text-sm sm:text-base">
                                 <thead className="border-b-2 border-gray-200">
                                     <tr>
-                                        <th className="py-3 px-4 text-right font-semibold text-gray-600">نوع وسیله نقلیه</th>
-                                        <th className="py-3 px-4 text-right font-semibold text-gray-600">شرایط آب و هوایی</th>
-                                        <th className="py-3 px-4 text-right font-semibold text-gray-600">توصیه مبلایل PTT</th>
-                                        <th className="py-3 px-4 text-right font-semibold text-gray-600">ویژگی‌ها</th>
+                                        <th className="py-2 sm:py-3 px-2 sm:px-4 text-right font-semibold text-gray-600 whitespace-nowrap">نوع وسیله نقلیه</th>
+                                        <th className="py-2 sm:py-3 px-2 sm:px-4 text-right font-semibold text-gray-600 whitespace-nowrap">شرایط آب و هوایی</th>
+                                        <th className="py-2 sm:py-3 px-2 sm:px-4 text-right font-semibold text-gray-600 whitespace-nowrap">توصیه مبلایل PTT</th>
+                                        <th className="py-2 sm:py-3 px-2 sm:px-4 text-right font-semibold text-gray-600 whitespace-nowrap">ویژگی‌ها</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     {quickSelectionTable.map((row, index) => (
                                         <tr key={index} className={`${index % 2 === 0 ? 'bg-blue-100/50' : 'bg-white'} hover:bg-blue-200/100 transition-colors duration-200`}>
-                                            <td className="py-3 px-4 text-gray-700 border-b border-gray-200">{row.vehicleType}</td>
-                                            <td className="py-3 px-4 text-gray-700 border-b border-gray-200">{row.conditions}</td>
-                                            <td className="py-3 px-4 text-gray-700 border-b border-gray-200">{row.recommendation}</td>
-                                            <td className="py-3 px-4 text-gray-700 border-b border-gray-200">{row.features}</td>
+                                            <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 border-b border-gray-200">{row.vehicleType}</td>
+                                            <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 border-b border-gray-200">{row.conditions}</td>
+                                            <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 border-b border-gray-200">{row.recommendation}</td>
+                                            <td className="py-2 sm:py-3 px-2 sm:px-4 text-gray-700 border-b border-gray-200">{row.features}</td>
                                         </tr>
                                     ))}
                                 </tbody>
@@ -79,4 +75,3 @@ const SelectionGuideSection = () => {
 }
 
 export default SelectionGuideSection;
-

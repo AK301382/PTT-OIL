@@ -8,37 +8,25 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const HomePage = () => {
-    // Sample data for the slider - REPLACE WITH YOUR ACTUAL DATA
     const sliderData = [
-        {
-            image: "/assets/slider/image5.jpg", // Example path, replace with your image
-        },
-        {
-            image: "/assets/slider/image4.jpg", // Example path, replace with your image
-        },
-        {
-            image: "/assets/slider/image3.jpg", // Example path, replace with your image
-        },
-        {
-            image: "/assets/slider/image2.jpg", // Example path, replace with your image
-        },
-        {
-            image: "/assets/slider/image1.jpg", // Example path, replace with your image
-        },
-
+        { image: "/assets/slider/image5.jpg" },
+        { image: "/assets/slider/image4.jpg" },
+        { image: "/assets/slider/image3.jpg" },
+        { image: "/assets/slider/image2.jpg" },
+        { image: "/assets/slider/image1.jpg" },
     ];
 
     const settings = {
-        dots: true, // Show dot indicators for navigation
+        dots: true,
         infinite: true,
-        speed: 700, // Transition speed
+        speed: 700,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true,
-        autoplaySpeed: 3500, // Change slide every 3.5 seconds
-        rtl: true, // Enable Right-to-Left
+        autoplaySpeed: 3500,
+        rtl: true,
         fade: false,
-        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)', // Smoother fade transition
+        cssEase: 'cubic-bezier(0.7, 0, 0.3, 1)',
         pauseOnHover: true,
     };
 
@@ -59,7 +47,7 @@ const HomePage = () => {
                 </Slider>
             </div>
 
-            {/* Original Home Page Content (below the slider) - Styled with light green background and rounded corners */}
+            {/* Original Home Page Content */}
             <section id="home-content" className="py-10">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-blue-300 text-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
@@ -68,16 +56,16 @@ const HomePage = () => {
                             <h3 className="text-2xl mb-8 text-gray-600">
                                 محافظت کامل از موتر، سه چرخ و موتور با فرمولاسیون پیشرفته و کیفیت جهانی
                             </h3>
-                            <div className="mb-16">
+                            <div className="mb-16 flex flex-col sm:flex-row justify-center items-center">
                                 <a
                                     href="#selection-guide"
-                                    className="bg-gray-800 text-white font-bold py-4 px-8 rounded-2xl hover:bg-gray-800 transition duration-300 mx-2 mb-2 sm:mb-0 inline-block"
+                                    className="bg-gray-800 text-white font-bold py-3 px-6 text-sm sm:text-base sm:py-4 sm:px-8 rounded-2xl hover:bg-gray-800 transition duration-300 mx-2 mb-2 sm:mb-0"
                                 >
                                     راهنمایی انتخاب
                                 </a>
                                 <a
                                     href="#products"
-                                    className="bg-gray-800 text-white font-bold py-4 px-6 rounded-2xl hover:bg-gray-800 transition duration-300 mx-2 inline-block"
+                                    className="bg-gray-800 text-white font-bold py-3 px-5 text-sm sm:text-base sm:py-4 sm:px-6 rounded-2xl hover:bg-gray-800 transition duration-300 mx-2"
                                 >
                                     مشاهده محصولات
                                 </a>
@@ -112,4 +100,3 @@ const HomePage = () => {
 };
 
 export default HomePage;
-
